@@ -2,82 +2,95 @@
 <html lang="ar" dir="rtl">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>مرحبًا بكم في عالمي</title>
-  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@700&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>صفحتي الخاصة</title>
   <style>
-    * {
+    body {
       margin: 0;
       padding: 0;
-      box-sizing: border-box;
-      font-family: 'Tajawal', sans-serif;
-    }
-
-    body {
-      
-     background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #000;
       color: white;
-      text-align: center;
-      padding: 20px;
-      overflow-x: hidden;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
     }
 
-    h1 {
-      font-size: 3rem;
-      margin-top: 40px;
-      background: linear-gradient(90deg, #00fff0, #0fffc1);
-     
-     animation: slideIn 1s ease forwards;
+    header {
+      text-align: center;
+      padding: 30px 20px 10px;
+      background: linear-gradient(to right, #111, #333);
+    }
+
+    header h1 {
+      font-size: 2.5rem;
+      margin: 0;
+      animation: fadeInDown 1.5s ease-out;
+    }
+
+    .video-container {
+      position: relative;
+      width: 100%;
+      max-height: 90vh;
+      overflow: hidden;
     }
 
     video {
-      margin-top: 40px;
-      width: 90%;
-      max-width: 800px;
-      border: 6px solid white;
-      border-radius: 20px;
-      box-shadow: 0 0 30px rgba(255, 255, 255, 0.2);
-      animation: fadeIn 2s ease;
-    }
-    footer{
-       margin-top: auto ;
-       padding: 20px 0 10 px;
-       font-size: 0.9rem;
-       color: #aaa;
-       animation: fadeIn 2s ease-in-out; 
-    }
-    @keyframes fadeInDown {
-      0% { transform: translateY(-30px); opacity: 0; }
-      100% { transform: translateY(0); opacity: 1; }
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+      display: block;
+      animation: fadeIn 2s ease-in-out;
     }
 
-    @keyframes fadeInUp {
-      0% { transform: translateY(30px); opacity: 0; }
-      100% { transform: translateY(0); opacity: 1; }
+    footer {
+      margin-top: auto;
+      background-color: #111;
+      color: #aaa;
+      text-align: center;
+      padding: 15px;
+      font-size: 0.9rem;
+    }
+
+    @keyframes fadeIn {
+      from {opacity: 0;}
+      to {opacity: 1;}
+    }
+
+    @keyframes fadeInDown {
+      from {
+        opacity: 0;
+        transform: translateY(-30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
 
     @media (max-width: 600px) {
-      h1 {
-        font-size: 2rem;
+      header h1 {
+        font-size: 1.8rem;
       }
 
-      video {
-        width: 100%;
-      }
-
-     footer{
+      footer {
         font-size: 0.8rem;
-     }
-
+        padding: 10px;
+      }
     }
   </style>
 </head>
 <body>
-  <h1>ARC-M.AL-FQ-MALL</h1>
-  <video autoplay muted playsinline loop>
-    <source src="videoarc.mp4" type="video/mp4">
-    المتصفح لا يدعم تشغيل الفيديو.
-  </video>
+    <header>
+       <h1>ARC-M.AL-FQ-MALL</h1>
+    </header>
+ 
+  <div class="video-container">
+    <video autoplay muted playsinline loop>
+      <source src="videoarc.mp4" type="video/mp4">
+      متصفحك لا يدعم تشغيل الفيديو.
+    </video>
+  </div>
   <footer>
 @الحقوق محفوظة لدئ eng-e.cp9-
 
